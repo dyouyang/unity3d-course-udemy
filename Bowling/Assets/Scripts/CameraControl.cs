@@ -18,7 +18,7 @@ public class CameraControl : MonoBehaviour {
 	}
 
     void updateCameraPosition() {
-        if (transform.position.z < 1829f) {
+        if (transform.position.z < 1729f) {
             gameObject.transform.position = ball.transform.position + cameraOffset;
         }
     }

@@ -3,8 +3,6 @@ using System.Collections;
 
 public class Ball : MonoBehaviour {
 
-    public Vector3 initialVelocity;
-
     private AudioSource audioSource;
     private Rigidbody rigidbody;
 
@@ -12,12 +10,12 @@ public class Ball : MonoBehaviour {
 	void Start () {
         audioSource = GetComponent<AudioSource>();
         rigidbody = GetComponent<Rigidbody>();
-
-        launchBall();
+        rigidbody.useGravity = false;
     }
 
-    private void launchBall() {
+    public void launchBall(Vector3 launchVelocity) {
+        rigidbody.useGravity = true;
         audioSource.Play();
-        rigidbody.velocity = initialVelocity;
+        rigidbody.velocity = launchVelocity;
     }
 }
