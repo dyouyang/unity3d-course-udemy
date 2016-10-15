@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Ball : MonoBehaviour {
 
-    public float initialVelocity;
+    public Vector3 initialVelocity;
 
     private AudioSource audioSource;
     private Rigidbody rigidbody;
@@ -18,6 +18,6 @@ public class Ball : MonoBehaviour {
 
     private void launchBall() {
         audioSource.Play();
-        rigidbody.velocity = new Vector3(0, 0, initialVelocity);
+        rigidbody.velocity = initialVelocity;
     }
 }
