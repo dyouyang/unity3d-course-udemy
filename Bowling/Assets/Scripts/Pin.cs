@@ -15,7 +15,7 @@ public class Pin : MonoBehaviour {
 	}
 
 	void Update() {
-		print (IsStanding ());
+		//print (IsStanding ());
 	}
 
 	private bool insideThreshold(float angle) {
