@@ -5,8 +5,10 @@ using System.Collections;
 public class PinSetter : MonoBehaviour {
 
 	public Text numPins;
+	public int lastStandingCount = -1;
 
     private bool ballEnteredBox;
+	private float lastPinCountChangeTime;
 
 	// Use this for initialization
 	void Start () {
@@ -15,7 +17,32 @@ public class PinSetter : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		numPins.text = standingCount().ToString();
+		numPins.text = StandingCount().ToString();
+
+		if (ballEnteredBox) {
+			CheckStanding ();
+		}
+	}
+
+	void CheckStanding () {
+		int standingCount = StandingCount();
+
+		if (standingCount != lastStandingCount) {
+			// Pin count has changed since last call, update count and time.
+			lastStandingCount = standingCount;
+			lastPinCountChangeTime = Time.timeSinceLevelLoad;
+		} else if (Time.timeSinceLevelLoad - lastPinCountChangeTime > 3f) {
+			// Pin count has not changed for 3 seconds, consider stable
+			OnPinsSettled ();
+		}
+		// Count is same, but we haven't met the time threshold yet, do nothing.
+	}
+
+	void OnPinsSettled () {
+		print ("Pins have settled");
+		lastStandingCount = -1; // reset
+		ballEnteredBox = false;
+		numPins.color = Color.green;
 	}
 
     void OnTriggerEnter(Collider other) {
@@ -31,7 +58,7 @@ public class PinSetter : MonoBehaviour {
         }
     }
 
-	public int standingCount() {
+	public int StandingCount() {
 
 		int count = 0;
 		Pin[] pins = FindObjectsOfType<Pin> ();
