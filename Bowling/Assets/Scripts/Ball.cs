@@ -4,18 +4,29 @@ using System.Collections;
 public class Ball : MonoBehaviour {
 
     private AudioSource audioSource;
-    private Rigidbody rigidbody;
+	private Rigidbody rigidBody;
+
+	private Vector3 initialPos;
 
 	// Use this for initialization
 	void Start () {
         audioSource = GetComponent<AudioSource>();
-        rigidbody = GetComponent<Rigidbody>();
-        rigidbody.useGravity = false;
+        rigidBody = GetComponent<Rigidbody>();
+        rigidBody.useGravity = false;
+
+		initialPos = transform.position;
     }
 
     public void launchBall(Vector3 launchVelocity) {
-        rigidbody.useGravity = true;
+        rigidBody.useGravity = true;
         audioSource.Play();
-        rigidbody.velocity = launchVelocity;
+        rigidBody.velocity = launchVelocity;
     }
+
+	public void Reset () {
+		transform.position = initialPos;
+		rigidBody.useGravity = false;
+		rigidBody.velocity = Vector3.zero;
+		rigidBody.angularVelocity = Vector3.zero;
+	}
 }

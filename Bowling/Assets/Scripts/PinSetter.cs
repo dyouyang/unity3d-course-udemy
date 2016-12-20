@@ -10,8 +10,11 @@ public class PinSetter : MonoBehaviour {
     private bool ballEnteredBox;
 	private float lastPinCountChangeTime;
 
+	private Ball ball;
+
 	// Use this for initialization
 	void Start () {
+		ball = FindObjectOfType<Ball> ();
         ballEnteredBox = false;
 	}
 	
@@ -43,6 +46,7 @@ public class PinSetter : MonoBehaviour {
 		lastStandingCount = -1; // reset
 		ballEnteredBox = false;
 		numPins.color = Color.green;
+		ball.Reset ();
 	}
 
     void OnTriggerEnter(Collider other) {
