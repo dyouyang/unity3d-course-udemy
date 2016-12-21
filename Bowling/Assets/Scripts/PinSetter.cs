@@ -6,6 +6,7 @@ public class PinSetter : MonoBehaviour {
 
 	public Text numPins;
 	public int lastStandingCount = -1;
+	public float raiseHeight = 50f;
 
     private bool ballEnteredBox;
 	private float lastPinCountChangeTime;
@@ -47,6 +48,30 @@ public class PinSetter : MonoBehaviour {
 		ballEnteredBox = false;
 		numPins.color = Color.green;
 		ball.Reset ();
+	}
+
+	void RaisePins() {
+		Debug.Log ("Raising pins");
+		foreach (Pin pin in FindObjectsOfType<Pin>()) {
+			if (pin.IsStanding ()) {
+				pin.GetComponent<Rigidbody> ().useGravity = false;
+				pin.transform.Translate(new Vector3(0, raiseHeight, 0));
+			}
+		}
+	}
+
+	private void LowerPins() {
+		Debug.Log ("Lowering pins");
+		foreach (Pin pin in FindObjectsOfType<Pin>()) {
+			if (pin.IsStanding ()) {
+				pin.GetComponent<Rigidbody> ().useGravity = true;
+				pin.transform.Translate(new Vector3(0, -raiseHeight, 0));
+			}
+		}
+	}
+
+	private void RenewPins() {
+		Debug.Log ("Renewing pins");
 	}
 
     void OnTriggerEnter(Collider other) {

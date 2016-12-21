@@ -24,18 +24,18 @@ AnimationClip:
         tangentMode: 0
       - time: 1.5166667
         value: {x: -0, y: -0.096, z: -0.205}
-        inSlope: {x: 0, y: -0.12673266, z: 0.2213077}
-        outSlope: {x: 0, y: -0.12673266, z: 0.2213077}
+        inSlope: {x: 0, y: -0.12673266, z: 0.27197435}
+        outSlope: {x: 0, y: -0.12673266, z: 0.27197435}
         tangentMode: 0
       - time: 3.0166667
-        value: {x: -0, y: -0.134, z: 0.332}
-        inSlope: {x: 0, y: 0.00014232192, z: -0.0020112246}
-        outSlope: {x: 0, y: 0.00014232192, z: -0.0020112246}
+        value: {x: 0, y: -0.134, z: 0.484}
+        inSlope: {x: 0, y: 0.00014232192, z: -0.0025805235}
+        outSlope: {x: 0, y: 0.00014232192, z: -0.0025805235}
         tangentMode: 0
       - time: 4.5
         value: {x: -0, y: -0.096, z: -0.205}
-        inSlope: {x: 0, y: 0.12814239, z: -0.223789}
-        outSlope: {x: 0, y: 0.12814239, z: -0.223789}
+        inSlope: {x: 0, y: 0.12814239, z: -0.27502495}
+        outSlope: {x: 0, y: 0.12814239, z: -0.27502495}
         tangentMode: 0
       - time: 6
         value: {x: 0, y: 0.25000018, z: -0.3333333}
@@ -98,7 +98,7 @@ AnimationClip:
         outSlope: 0
         tangentMode: 10
       - time: 3.0166667
-        value: -0
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 10
@@ -164,18 +164,18 @@ AnimationClip:
         tangentMode: 10
       - time: 1.5166667
         value: -0.205
-        inSlope: 0.2213077
-        outSlope: 0.2213077
+        inSlope: 0.27197435
+        outSlope: 0.27197435
         tangentMode: 10
       - time: 3.0166667
-        value: 0.332
-        inSlope: -0.0020112246
-        outSlope: -0.0020112246
+        value: 0.484
+        inSlope: -0.0025805235
+        outSlope: -0.0025805235
         tangentMode: 10
       - time: 4.5
         value: -0.205
-        inSlope: -0.223789
-        outSlope: -0.223789
+        inSlope: -0.27502495
+        outSlope: -0.27502495
         tangentMode: 10
       - time: 6
         value: -0.3333333
