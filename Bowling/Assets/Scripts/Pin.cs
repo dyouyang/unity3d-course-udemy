@@ -4,6 +4,7 @@ using System.Collections;
 public class Pin : MonoBehaviour {
 
 	public float standingThreshold = 10f;
+	public float raiseDistance = 50f;
 
 	public bool IsStanding() {
 		Vector3 eulerAngles = gameObject.transform.eulerAngles;
@@ -26,5 +27,15 @@ public class Pin : MonoBehaviour {
 		} else {
 			return false;
 		}
+	}
+
+	public void Raise() {
+		transform.Translate(new Vector3(0, raiseDistance, 0));
+		GetComponent<Rigidbody> ().useGravity = false;
+	}
+
+	public void Lower() {
+		transform.Translate (new Vector3 (0, -raiseDistance, 0));
+		GetComponent<Rigidbody> ().useGravity = true;
 	}
 }
