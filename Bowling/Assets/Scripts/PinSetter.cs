@@ -6,6 +6,7 @@ public class PinSetter : MonoBehaviour {
 
 	public Text numPins;
 	public int lastStandingCount = -1;
+	public GameObject pinSet;
 
     private bool ballEnteredBox;
 	private float lastPinCountChangeTime;
@@ -69,6 +70,7 @@ public class PinSetter : MonoBehaviour {
 
 	private void RenewPins() {
 		Debug.Log ("Renewing pins");
+		Instantiate (pinSet, new Vector3 (0, 10, 1829), Quaternion.identity);
 	}
 
     void OnTriggerEnter(Collider other) {

@@ -1564,6 +1564,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numPins: {fileID: 2142371643}
   lastStandingCount: -1
+  pinSet: {fileID: 1000011895110654, guid: 498d049166a30f94d9393c1bd33827b9, type: 2}
 --- !u!65 &1405017825
 BoxCollider:
   m_ObjectHideFlags: 0
