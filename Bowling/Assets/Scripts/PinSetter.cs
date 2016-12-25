@@ -24,11 +24,11 @@ public class PinSetter : MonoBehaviour {
 		numPins.text = StandingCount().ToString();
 
 		if (ballEnteredBox) {
-			CheckStanding ();
+			CountStandingAndCheckSettled ();
 		}
 	}
 
-	void CheckStanding () {
+	void CountStandingAndCheckSettled () {
 		int standingCount = StandingCount();
 
 		if (standingCount != lastStandingCount) {

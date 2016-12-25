@@ -389,6 +389,7 @@ GameObject:
   - 124: {fileID: 280523742}
   - 81: {fileID: 280523741}
   - 114: {fileID: 280523746}
+  - 45: {fileID: 280523747}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -476,6 +477,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ball: {fileID: 724589210}
+--- !u!45 &280523747
+Skybox:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 280523740}
+  m_Enabled: 1
+  m_CustomSkybox: {fileID: 2100000, guid: 36ebb1f81aa054bd49704f3d17f62c4d, type: 2}
 --- !u!1 &333064535
 GameObject:
   m_ObjectHideFlags: 0
@@ -614,6 +623,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d542b7605cf52a543922a8833d31aaa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inPlay: 0
 --- !u!82 &724589211
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1821,8 +1831,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 7
   m_Type: 1
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 1, g: 0.80638945, b: 0.3897059, a: 1}
+  m_Intensity: 0.5
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
