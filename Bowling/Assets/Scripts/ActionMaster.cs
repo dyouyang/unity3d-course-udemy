@@ -4,6 +4,7 @@ using System.Collections;
 public class ActionMaster {
 
 	private int bowlNumber = 1;
+	private int[] bowls = new int[21];
 
 	public enum Action {
 		Tidy,
@@ -13,26 +14,50 @@ public class ActionMaster {
 	};
 
 	public Action Bowl (int pins) {
-
 		if (pins < 0 || pins > 10) {
 			throw new UnityException ("Bowled invalid number of pins (less than 0 or greater than 10");
 		}
 
-		// For now, this means we bowled a strike. TODO: handle 0 then 10 spare case.
-		if (pins == 10) {
-			bowlNumber += 2;
-			return Action.EndTurn;
+		bowls [bowlNumber - 1] = pins;
+
+		// Definitely end the game.
+		if (bowlNumber == 21) {
+			return Action.EndGame;
 		}
 
-		// If we bowled less than 10 and are not at the end of a frame, tidy.
-		if (bowlNumber % 2 != 0) { // Middle of frame
+		// Extra bowl in case of strike on 19 or spare on 20.
+		if (bowlNumber >= 19 && Bowl21Awarded ()) {
 			bowlNumber += 1;
-			return Action.Tidy;
-		} else { // End of frame
+			return Action.Reset;
+		} else if (bowlNumber == 20 && !Bowl21Awarded ()) {
+			// No extra bowl.
+			return Action.EndGame;
+		}
+
+		if (bowlNumber % 2 != 0) { // First bowl of frame.
+			if (pins == 10) {
+				// Strike.
+				bowlNumber += 2;
+				return Action.EndTurn;
+			} else {
+				// Also handles 0-10 spares.
+				bowlNumber += 1;
+				return Action.Tidy;
+			}
+		} else { // Second bowl of frame.
 			bowlNumber += 1;
 			return Action.EndTurn;
 		}
 
 		throw new UnityException ("Did not find a matching Action to return");
+	}
+
+	private bool Bowl21Awarded() {
+		if (bowls [19 - 1] + bowls [20 - 1] == 10) {
+			// If we bowled a strike on 19, or we bowled a spare on 20...
+			return true;
+		} else {
+			return false;
+		}
 	}
 }
