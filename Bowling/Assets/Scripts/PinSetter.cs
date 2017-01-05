@@ -8,15 +8,22 @@ public class PinSetter : MonoBehaviour {
 	public int lastStandingCount = -1;
 	public GameObject pinSet;
 
+	private ActionMaster actionMaster;
     private bool ballEnteredBox;
 	private float lastPinCountChangeTime;
 
+	// Updated only once per bowl.  Used to determine the number of pins knocked down.
+	private int lastSettledCount = 10;
+
 	private Ball ball;
+	private Animator animator;
 
 	// Use this for initialization
 	void Start () {
 		ball = FindObjectOfType<Ball> ();
         ballEnteredBox = false;
+		actionMaster = new ActionMaster ();
+		animator = GetComponent<Animator> ();
 	}
 	
 	// Update is called once per frame
@@ -44,10 +51,34 @@ public class PinSetter : MonoBehaviour {
 
 	void OnPinsSettled () {
 		print ("Pins have settled");
+		int fallenCount = lastSettledCount - StandingCount ();
+		lastSettledCount = StandingCount ();
+		HandleAction(actionMaster.Bowl (fallenCount));
+		Debug.Log ("Fallen Count " + fallenCount.ToString ());
 		lastStandingCount = -1; // reset
 		ballEnteredBox = false;
 		numPins.color = Color.green;
 		ball.Reset ();
+	}
+
+	private void HandleAction(ActionMaster.Action action) {
+
+		switch (action) {
+		case ActionMaster.Action.Tidy:
+			animator.SetTrigger ("tidyTrigger");
+			break;
+		case ActionMaster.Action.Reset:
+			animator.SetTrigger ("resetTrigger");
+			break;
+		case ActionMaster.Action.EndTurn:
+			animator.SetTrigger ("resetTrigger");
+			break;
+		case ActionMaster.Action.EndGame:
+			print ("Game over");
+			break;
+		default:
+			throw new UnityException("Could not handle action, no match");
+		}
 	}
 
 	void RaisePins() {
@@ -71,6 +102,7 @@ public class PinSetter : MonoBehaviour {
 	private void RenewPins() {
 		Debug.Log ("Renewing pins");
 		Instantiate (pinSet, new Vector3 (0, 10, 1829), Quaternion.identity);
+		lastSettledCount = 10;
 	}
 
     void OnTriggerEnter(Collider other) {
