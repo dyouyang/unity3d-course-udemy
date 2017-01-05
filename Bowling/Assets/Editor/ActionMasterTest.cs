@@ -69,4 +69,13 @@ public class ActionMasterTest {
 		}
 		Assert.AreEqual (ActionMaster.Action.EndGame, actionMaster.Bowl (8));
 	}
+
+	[Test]
+	public void BowlStrikeOn19ThenBowl5ShouldTidy() {
+		int[] bowls = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,10}; // First 19 bowls.
+		foreach (int bowl in bowls) {
+			actionMaster.Bowl (bowl);
+		}
+		Assert.AreEqual (ActionMaster.Action.Tidy, actionMaster.Bowl (5));
+	}
 }
