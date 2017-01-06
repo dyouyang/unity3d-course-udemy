@@ -89,6 +89,9 @@ public class PinSetter : MonoBehaviour {
 		Debug.Log ("Raising pins");
 		foreach (Pin pin in FindObjectsOfType<Pin>()) {
 			if (pin.IsStanding ()) {
+
+				// Return to fully standing just in case of tiny angles.
+				pin.transform.rotation = Quaternion.identity;
 				pin.Raise ();
 			}
 		}
