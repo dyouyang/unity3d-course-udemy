@@ -9,7 +9,7 @@ public class PinSetter : MonoBehaviour {
 	public GameObject pinSet;
 
 	private ActionMaster actionMaster;
-    private bool ballEnteredBox;
+	private bool ballLeftLaneBox;
 	private float lastPinCountChangeTime;
 
 	// Updated only once per bowl.  Used to determine the number of pins knocked down.
@@ -21,16 +21,21 @@ public class PinSetter : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		ball = FindObjectOfType<Ball> ();
-        ballEnteredBox = false;
+        ballLeftLaneBox = false;
 		actionMaster = new ActionMaster ();
 		animator = GetComponent<Animator> ();
 	}
-	
+
+	public void OnBallLeftLaneBox()  {
+		numPins.color = Color.red;
+		ballLeftLaneBox = true;
+	}
+
 	// Update is called once per frame
 	void Update () {
 		numPins.text = StandingCount().ToString();
 
-		if (ballEnteredBox) {
+		if (ballLeftLaneBox) {
 			CountStandingAndCheckSettled ();
 		}
 	}
@@ -56,7 +61,7 @@ public class PinSetter : MonoBehaviour {
 		HandleAction(actionMaster.Bowl (fallenCount));
 		Debug.Log ("Fallen Count " + fallenCount.ToString ());
 		lastStandingCount = -1; // reset
-		ballEnteredBox = false;
+		ballLeftLaneBox = false;
 		numPins.color = Color.green;
 		ball.Reset ();
 	}
@@ -104,13 +109,6 @@ public class PinSetter : MonoBehaviour {
 		Instantiate (pinSet, new Vector3 (0, 10, 1829), Quaternion.identity);
 		lastSettledCount = 10;
 	}
-
-    void OnTriggerEnter(Collider other) {
-        if (other.gameObject.GetComponent<Ball>() != null) {
-            numPins.color = Color.red;
-            ballEnteredBox = true;
-        }
-    }
 
     void OnTriggerExit(Collider other) {
         if (other.gameObject.GetComponentInParent<Pin>() != null) {
