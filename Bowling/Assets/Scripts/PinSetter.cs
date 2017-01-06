@@ -5,18 +5,17 @@ using System.Collections;
 public class PinSetter : MonoBehaviour {
 
 	public Text numPins;
-	public int lastStandingCount = -1;
 	public GameObject pinSet;
 
-	private ActionMaster actionMaster;
+	private int lastStandingCount = -1;
 	private bool ballLeftLaneBox;
 	private float lastPinCountChangeTime;
-
 	// Updated only once per bowl.  Used to determine the number of pins knocked down.
 	private int lastSettledCount = 10;
 
-	private Ball ball;
+	private ActionMaster actionMaster;
 	private Animator animator;
+	private Ball ball;
 
 	// Use this for initialization
 	void Start () {
