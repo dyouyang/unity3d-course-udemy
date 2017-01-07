@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
 public class ActionMaster {
 
@@ -12,6 +12,16 @@ public class ActionMaster {
 		EndTurn,
 		EndGame
 	};
+
+	public static Action NextAction(List<int> pinFalls) {
+
+		ActionMaster actionMaster = new ActionMaster ();
+		Action currentAction = new Action ();
+		foreach (int pinFall in pinFalls) {
+			currentAction = actionMaster.Bowl (pinFall);
+		}
+		return currentAction;
+	}
 
 	public Action Bowl (int pins) {
 		if (pins < 0 || pins > 10) {

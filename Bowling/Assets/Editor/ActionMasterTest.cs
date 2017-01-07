@@ -1,15 +1,9 @@
 ﻿using UnityEngine;
 using UnityEditor;
 using NUnit.Framework;
+using System.Collections.Generic;
 
 public class ActionMasterTest {
-
-	ActionMaster actionMaster;
-
-	[SetUp]
-	public void Setup() {
-		actionMaster = new ActionMaster ();
-	}
 
 	[Test]
 	public void FailingTest() {
@@ -18,64 +12,49 @@ public class ActionMasterTest {
 
 	[Test]
 	public void BowlStrikeReturnsEndTurn() {
-		Assert.AreEqual (ActionMaster.Action.EndTurn, actionMaster.Bowl (10));
+		List<int> bowls = new List<int>{10};
+		Assert.AreEqual (ActionMaster.Action.EndTurn, ActionMaster.NextAction (bowls));
 	}
 
 	[Test]
 	public void Bowl8OnFirstBowlReturnsTidy() {
-		Assert.AreEqual (ActionMaster.Action.Tidy, actionMaster.Bowl (8));
+		List<int> bowls = new List<int>{8};
+		Assert.AreEqual (ActionMaster.Action.Tidy, ActionMaster.NextAction (bowls));
 	}
 
 	[Test]
 	public void BowlSpare2Then8ReturnsEndTurn() {
-		actionMaster.Bowl (2);
-		Assert.AreEqual (ActionMaster.Action.EndTurn, actionMaster.Bowl (8));
+		List<int> bowls = new List<int>{2, 8};
+		Assert.AreEqual (ActionMaster.Action.EndTurn, ActionMaster.NextAction (bowls));
 	}
 
 	[Test]
 	public void BowlStrikeOnLastFrameReturnsReset() {
-		int[] bowls = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}; // First 18 bowls, 9 frames.
-		foreach (int bowl in bowls) {
-			actionMaster.Bowl (bowl);
-		}
-		Assert.AreEqual (ActionMaster.Action.Reset, actionMaster.Bowl (10));
+		List<int> bowls = new List<int>{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1, 10}; // First 18 bowls, 9 frames.
+		Assert.AreEqual (ActionMaster.Action.Reset, ActionMaster.NextAction (bowls));
 	}
 
 	[Test]
 	public void BowlSpareOnLastFrameReturnsReset() {
-		int[] bowls = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}; // First 18 bowls, 9 frames.
-		foreach (int bowl in bowls) {
-			actionMaster.Bowl (bowl);
-		}
-		actionMaster.Bowl (2);
-		Assert.AreEqual (ActionMaster.Action.Reset, actionMaster.Bowl (8));
+		List<int> bowls = new List<int>{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,8}; // First 18 bowls, 9 frames.
+		Assert.AreEqual (ActionMaster.Action.Reset, ActionMaster.NextAction (bowls));
 	}
 
 	[Test]
 	public void Bowl20EndGame() {
-		int[] bowls = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}; // First 18 bowls, 9 frames.
-		foreach (int bowl in bowls) {
-			actionMaster.Bowl (bowl);
-		}
-		actionMaster.Bowl (2);
-		Assert.AreEqual (ActionMaster.Action.EndGame, actionMaster.Bowl (7));
+		List<int> bowls = new List<int>{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,7}; // First 18 bowls, 9 frames.
+		Assert.AreEqual (ActionMaster.Action.EndGame, ActionMaster.NextAction (bowls));
 	}
 
 	[Test]
 	public void Bowl21EndGame() {
-		int[] bowls = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,8}; // First 20 bowls, 10 frames.
-		foreach (int bowl in bowls) {
-			actionMaster.Bowl (bowl);
-		}
-		Assert.AreEqual (ActionMaster.Action.EndGame, actionMaster.Bowl (8));
+		List<int> bowls = new List<int>{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,8,8}; // First 20 bowls, 10 frames.
+		Assert.AreEqual (ActionMaster.Action.EndGame, ActionMaster.NextAction (bowls));
 	}
 
 	[Test]
 	public void BowlStrikeOn19ThenBowl5ShouldTidy() {
-		int[] bowls = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,10}; // First 19 bowls.
-		foreach (int bowl in bowls) {
-			actionMaster.Bowl (bowl);
-		}
-		Assert.AreEqual (ActionMaster.Action.Tidy, actionMaster.Bowl (5));
+		List<int> bowls = new List<int>{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,10,5}; // First 19 bowls.
+		Assert.AreEqual (ActionMaster.Action.Tidy, ActionMaster.NextAction (bowls));
 	}
 }
