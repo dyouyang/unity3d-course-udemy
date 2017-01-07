@@ -1691,6 +1691,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   standingThreshold: 10
+  raiseDistance: 50
 --- !u!114 &114000010489556274
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1703,6 +1704,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   standingThreshold: 10
+  raiseDistance: 50
 --- !u!114 &114000010620342166
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1715,6 +1717,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   standingThreshold: 10
+  raiseDistance: 50
 --- !u!114 &114000010753768370
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1727,6 +1730,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   standingThreshold: 10
+  raiseDistance: 50
 --- !u!114 &114000011612547556
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1739,6 +1743,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   standingThreshold: 10
+  raiseDistance: 50
 --- !u!114 &114000012491039510
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1751,6 +1756,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   standingThreshold: 10
+  raiseDistance: 50
 --- !u!114 &114000012893759418
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1763,6 +1769,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   standingThreshold: 10
+  raiseDistance: 50
 --- !u!114 &114000013755190348
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1775,6 +1782,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   standingThreshold: 10
+  raiseDistance: 50
 --- !u!114 &114000013927469412
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1787,6 +1795,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   standingThreshold: 10
+  raiseDistance: 50
 --- !u!114 &114000013977499296
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1799,3 +1808,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   standingThreshold: 10
+  raiseDistance: 50
