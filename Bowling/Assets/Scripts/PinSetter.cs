@@ -3,69 +3,18 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class PinSetter : MonoBehaviour {
-
-	public Text numPins;
 	public GameObject pinSet;
 
-	private int lastStandingCount = -1;
-	private bool ballLeftLaneBox;
-	private float lastPinCountChangeTime;
-	// Updated only once per bowl.  Used to determine the number of pins knocked down.
-	private int lastSettledCount = 10;
-
-	private ActionMaster actionMaster;
 	private Animator animator;
-	private Ball ball;
+    private PinCounter pinCounter;
 
 	// Use this for initialization
 	void Start () {
-		ball = FindObjectOfType<Ball> ();
-        ballLeftLaneBox = false;
-		actionMaster = new ActionMaster ();
 		animator = GetComponent<Animator> ();
+        pinCounter = FindObjectOfType<PinCounter>();
 	}
 
-	public void OnBallLeftLaneBox()  {
-		numPins.color = Color.red;
-		ballLeftLaneBox = true;
-	}
-
-	// Update is called once per frame
-	void Update () {
-		numPins.text = StandingCount().ToString();
-
-		if (ballLeftLaneBox) {
-			CountStandingAndCheckSettled ();
-		}
-	}
-
-	void CountStandingAndCheckSettled () {
-		int standingCount = StandingCount();
-
-		if (standingCount != lastStandingCount) {
-			// Pin count has changed since last call, update count and time.
-			lastStandingCount = standingCount;
-			lastPinCountChangeTime = Time.timeSinceLevelLoad;
-		} else if (Time.timeSinceLevelLoad - lastPinCountChangeTime > 3f) {
-			// Pin count has not changed for 3 seconds, consider stable
-			OnPinsSettled ();
-		}
-		// Count is same, but we haven't met the time threshold yet, do nothing.
-	}
-
-	void OnPinsSettled () {
-		print ("Pins have settled");
-		int fallenCount = lastSettledCount - StandingCount ();
-		lastSettledCount = StandingCount ();
-		HandleAction(actionMaster.Bowl (fallenCount));
-		Debug.Log ("Fallen Count " + fallenCount.ToString ());
-		lastStandingCount = -1; // reset
-		ballLeftLaneBox = false;
-		numPins.color = Color.green;
-		ball.Reset ();
-	}
-
-	private void HandleAction(ActionMaster.Action action) {
+	public void HandleAction(ActionMaster.Action action) {
 
 		switch (action) {
 		case ActionMaster.Action.Tidy:
@@ -109,7 +58,7 @@ public class PinSetter : MonoBehaviour {
 	private void RenewPins() {
 		Debug.Log ("Renewing pins");
 		Instantiate (pinSet, new Vector3 (0, 10, 1829), Quaternion.identity);
-		lastSettledCount = 10;
+        pinCounter.Reset();
 	}
 
     void OnTriggerExit(Collider other) {
@@ -117,16 +66,4 @@ public class PinSetter : MonoBehaviour {
             Destroy(other.gameObject.transform.parent.gameObject);
         }
     }
-
-	public int StandingCount() {
-
-		int count = 0;
-		Pin[] pins = FindObjectsOfType<Pin> ();
-		foreach (Pin pin in pins) {
-			if (pin.IsStanding ()) {
-				count++;
-			}
-		}
-		return count;
-	}
 }

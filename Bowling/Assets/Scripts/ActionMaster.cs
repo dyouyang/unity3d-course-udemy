@@ -23,7 +23,7 @@ public class ActionMaster {
 		return currentAction;
 	}
 
-	public Action Bowl (int pins) {
+	private Action Bowl (int pins) {
 		if (pins < 0 || pins > 10) {
 			throw new UnityException ("Bowled invalid number of pins (less than 0 or greater than 10");
 		}
@@ -58,8 +58,6 @@ public class ActionMaster {
 			bowlNumber += 1;
 			return Action.EndTurn;
 		}
-
-		throw new UnityException ("Did not find a matching Action to return");
 	}
 
 	private bool Bowl21Awarded() {
