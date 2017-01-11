@@ -24,11 +24,11 @@ public class ScoreMaster {
 		// next start of frame. Additionally, due to the extra bowl, stop calculation
 		// at the 10th frame.
 		while (currentBowlIndex < bowls.Count && frameScores.Count < 10) {
-			int firstBowl = bowls [currentBowlIndex];
-			if (firstBowl == 10) {
+			int total = bowls [currentBowlIndex];
+			if (total == 10) {
 				// Handle a strike.
 				if (currentBowlIndex + 2 < bowls.Count) {
-					int total = 10 + bowls [currentBowlIndex + 1] + bowls [currentBowlIndex + 2];
+					total += bowls [currentBowlIndex + 1] + bowls [currentBowlIndex + 2];
 					frameScores.Add (total);
 				}
 				// The next bowl starts the next frame.
@@ -36,9 +36,9 @@ public class ScoreMaster {
 			} else {
 				int secondBowlIndex = currentBowlIndex + 1;
 
-				// Handle a normal two bowl frame.
+				// Handle a two bowl frame.
 				if (secondBowlIndex < bowls.Count) {
-					int total = bowls [currentBowlIndex] + bowls [secondBowlIndex];
+					total += bowls [secondBowlIndex];
 					if (total == 10) {
 						// Handle a spare.
 						if (secondBowlIndex + 1 < bowls.Count) {
