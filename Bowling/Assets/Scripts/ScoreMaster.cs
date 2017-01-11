@@ -17,34 +17,44 @@ public class ScoreMaster {
 
 	public static List<int> ScoreFrames(List<int> bowls) {
 		List<int> frameScores = new List<int> ();
-		//TODO: this is very basic, dont not handle spares/strikes and end of game extra frames.
-		for (int currentFrameIndex = 0; currentFrameIndex < bowls.Count / 2; currentFrameIndex++) {
-			int firstBowlIndex = currentFrameIndex * 2;
-			int secondBowlIndex = firstBowlIndex + 1;
 
-			if (firstBowlIndex < bowls.Count && secondBowlIndex < bowls.Count) {
-				int firstBowl = bowls [firstBowlIndex];
-				int secondBowl = bowls [secondBowlIndex];
-				int total = firstBowl + secondBowl;
-				if (firstBowl == 10) {
-					// Handle strike.
-					if (secondBowlIndex + 2 < bowls.Count) {
-						total = total + bowls [secondBowlIndex + 1] + bowls [secondBowlIndex + 2];
-						frameScores.Insert (currentFrameIndex, total);
-					}
-				} else if (total == 10) {
-					// Handle spare.
-					if (secondBowlIndex + 1 < bowls.Count) {
-						total += bowls [secondBowlIndex + 1];
-						frameScores.Insert (currentFrameIndex, total);
-					}
-				} else {
-					//frameScores.Insert (currentFrameIndex, total);
+		int currentBowlIndex = 0;
+
+		// Loop through bowls calculating known scores and incrementing to the
+		// next start of frame. Additionally, due to the extra bowl, stop calculation
+		// at the 10th frame.
+		while (currentBowlIndex < bowls.Count && frameScores.Count < 10) {
+			int firstBowl = bowls [currentBowlIndex];
+			if (firstBowl == 10) {
+				// Handle a strike.
+				if (currentBowlIndex + 2 < bowls.Count) {
+					int total = 10 + bowls [currentBowlIndex + 1] + bowls [currentBowlIndex + 2];
 					frameScores.Add (total);
 				}
-			}
-        }
+				// The next bowl starts the next frame.
+				currentBowlIndex++;
+			} else {
+				int secondBowlIndex = currentBowlIndex + 1;
 
+				// Handle a normal two bowl frame.
+				if (secondBowlIndex < bowls.Count) {
+					int total = bowls [currentBowlIndex] + bowls [secondBowlIndex];
+					if (total == 10) {
+						// Handle a spare.
+						if (secondBowlIndex + 1 < bowls.Count) {
+							total += bowls [secondBowlIndex + 1];
+							frameScores.Add (total);
+						}
+					} else {
+						// Normal frame.
+						frameScores.Add (total);
+					}
+				}
+
+				// The next frame starts after the second bowl of this frame.
+				currentBowlIndex += 2;
+			}
+		}
 		return frameScores;
 	}
 }
