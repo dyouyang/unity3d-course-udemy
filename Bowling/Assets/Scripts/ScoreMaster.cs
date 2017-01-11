@@ -23,7 +23,25 @@ public class ScoreMaster {
 			int secondBowlIndex = firstBowlIndex + 1;
 
 			if (firstBowlIndex < bowls.Count && secondBowlIndex < bowls.Count) {
-				frameScores.Insert(currentFrameIndex, bowls[firstBowlIndex] + bowls[secondBowlIndex]);
+				int firstBowl = bowls [firstBowlIndex];
+				int secondBowl = bowls [secondBowlIndex];
+				int total = firstBowl + secondBowl;
+				if (firstBowl == 10) {
+					// Handle strike.
+					if (secondBowlIndex + 2 < bowls.Count) {
+						total = total + bowls [secondBowlIndex + 1] + bowls [secondBowlIndex + 2];
+						frameScores.Insert (currentFrameIndex, total);
+					}
+				} else if (total == 10) {
+					// Handle spare.
+					if (secondBowlIndex + 1 < bowls.Count) {
+						total += bowls [secondBowlIndex + 1];
+						frameScores.Insert (currentFrameIndex, total);
+					}
+				} else {
+					//frameScores.Insert (currentFrameIndex, total);
+					frameScores.Add (total);
+				}
 			}
         }
 
