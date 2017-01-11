@@ -17,11 +17,14 @@ public class ScoreMaster {
 
 	public static List<int> ScoreFrames(List<int> bowls) {
 		List<int> frameScores = new List<int> ();
-        int currentFrameIndex = 0;
-        int currentBowlIndex = 0;
+		//TODO: this is very basic, dont not handle spares/strikes and end of game extra frames.
+		for (int currentFrameIndex = 0; currentFrameIndex < bowls.Count / 2; currentFrameIndex++) {
+			int firstBowlIndex = currentFrameIndex * 2;
+			int secondBowlIndex = firstBowlIndex + 1;
 
-        for (int i = currentBowlIndex; i < bowls.Count; i++) {
-
+			if (firstBowlIndex < bowls.Count && secondBowlIndex < bowls.Count) {
+				frameScores.Insert(currentFrameIndex, bowls[firstBowlIndex] + bowls[secondBowlIndex]);
+			}
         }
 
 		return frameScores;
