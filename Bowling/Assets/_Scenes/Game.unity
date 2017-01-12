@@ -883,7 +883,7 @@ GameObject:
   - 222: {fileID: 562327575}
   - 114: {fileID: 562327574}
   m_Layer: 5
-  m_Name: Bowl2 (1)
+  m_Name: BowlExtra
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -901,7 +901,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1216426872}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 50, y: 25}
@@ -2134,8 +2134,8 @@ RectTransform:
   m_Children:
   - {fileID: 1250426596}
   - {fileID: 1598247214}
-  - {fileID: 1426330387}
   - {fileID: 562327573}
+  - {fileID: 1426330387}
   m_Father: {fileID: 1408880888}
   m_RootOrder: 9
   m_AnchorMin: {x: 0, y: 0.5}
@@ -3162,7 +3162,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1216426872}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.000019788742, y: -25}
@@ -4274,6 +4274,79 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2020069711}
+--- !u!1 &2060960214
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2060960216}
+  - 114: {fileID: 2060960215}
+  m_Layer: 0
+  m_Name: ScoreDisplay
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2060960215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2060960214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30e1d26f15d554f6da180d15e972ccb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bowlTexts:
+  - {fileID: 1365860078}
+  - {fileID: 1218712911}
+  - {fileID: 900042277}
+  - {fileID: 992571109}
+  - {fileID: 1302885714}
+  - {fileID: 28173690}
+  - {fileID: 1459845446}
+  - {fileID: 2112273822}
+  - {fileID: 1315738738}
+  - {fileID: 819375365}
+  - {fileID: 496794372}
+  - {fileID: 1537823345}
+  - {fileID: 784140763}
+  - {fileID: 2001588514}
+  - {fileID: 1771444225}
+  - {fileID: 1990840598}
+  - {fileID: 232933448}
+  - {fileID: 2020069713}
+  - {fileID: 1250426597}
+  - {fileID: 1598247215}
+  - {fileID: 562327574}
+  scoreTexts:
+  - {fileID: 940190427}
+  - {fileID: 1438766856}
+  - {fileID: 1232055190}
+  - {fileID: 2019404067}
+  - {fileID: 561887595}
+  - {fileID: 1123307458}
+  - {fileID: 1339328705}
+  - {fileID: 805471220}
+  - {fileID: 1030239736}
+  - {fileID: 1426330388}
+--- !u!4 &2060960216
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2060960214}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1305, y: 50, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
 --- !u!1 &2112273820
 GameObject:
   m_ObjectHideFlags: 0
