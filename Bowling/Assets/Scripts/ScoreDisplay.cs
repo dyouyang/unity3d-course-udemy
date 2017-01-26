@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class ScoreDisplay : MonoBehaviour {
 
@@ -20,5 +21,9 @@ public class ScoreDisplay : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
+	}
+
+	public void FillRollCard(List<int> bowls) {
+		bowls [-1] = bowls [-1];
 	}
 }
