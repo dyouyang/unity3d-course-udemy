@@ -17,13 +17,16 @@ public class ScoreDisplay : MonoBehaviour {
 			score.text = "";
 		}
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+
+	public void FillBowls(List<int> bowls) {
+		for (int bowlIndex = 0; bowlIndex < bowls.Count; bowlIndex++) {
+			bowlTexts [bowlIndex].text = bowls [bowlIndex].ToString ();
+		}
 	}
 
-	public void FillRollCard(List<int> bowls) {
-		bowls [-1] = bowls [-1];
+	public void FillFrames(List<int> frames) {
+		for (int frameIndex = 0; frameIndex < frames.Count; frameIndex++) {
+			scoreTexts [frameIndex].text = frames [frameIndex].ToString ();
+		}
 	}
 }

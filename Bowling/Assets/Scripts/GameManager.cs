@@ -24,7 +24,8 @@ public class GameManager : MonoBehaviour {
         ball.Reset();
 
 		try {
-			scoreDisplay.FillRollCard (bowls);
+			scoreDisplay.FillBowls(bowls);
+			scoreDisplay.FillFrames (ScoreMaster.ScoreCumulative(bowls));
 		} catch {
 			Debug.LogError ("Could not fill roll card");
 		}
