@@ -8,11 +8,13 @@ public class GameManager : MonoBehaviour {
 
     private PinSetter pinSetter;
     private Ball ball;
+	private ScoreDisplay scoreDisplay;
 
 	// Use this for initialization
 	void Start () {
         pinSetter = FindObjectOfType<PinSetter>();
         ball = FindObjectOfType<Ball>();
+		scoreDisplay = FindObjectOfType<ScoreDisplay> ();
 	}
 
 	public void Bowl (int pinFall) {
@@ -20,5 +22,12 @@ public class GameManager : MonoBehaviour {
         ActionMaster.Action nextAction = ActionMaster.NextAction(bowls);
         pinSetter.HandleAction(nextAction);
         ball.Reset();
+
+		try {
+			scoreDisplay.FillBowls(bowls);
+			scoreDisplay.FillFrames (ScoreMaster.ScoreCumulative(bowls));
+		} catch {
+			Debug.LogError ("Could not fill roll card");
+		}
     }
 }
