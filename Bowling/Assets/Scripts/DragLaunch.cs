@@ -30,8 +30,10 @@ public class DragLaunch : MonoBehaviour {
     public void MoveStart(float xNudge) {
 		if (!ball.inPlay) {
             //ball.transform.position += new Vector3(xNudge, 0, 0);
-            ball.transform.Translate(new Vector3(xNudge, 0f, 0f));
-            
+			if (ball.transform.position.x + xNudge > -50
+			    && ball.transform.position.x + xNudge < 50) {
+				ball.transform.Translate (new Vector3 (xNudge, 0f, 0f));
+			}
         }
     }
 }
