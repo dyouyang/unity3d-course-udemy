@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Voice : MonoBehaviour {
 
+    public AudioClip whatHappened;
     public AudioClip callHeli;
     public AudioClip foundArea;
 
@@ -12,6 +13,8 @@ public class Voice : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         audioSource = GetComponent<AudioSource>();
+        audioSource.clip = whatHappened;
+        audioSource.Play();
 	}
 
     public void PlayFoundArea() {
