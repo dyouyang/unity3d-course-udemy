@@ -20,12 +20,12 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0, g: 0, b: 0, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 0
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43633196, g: 0.47471476, b: 0.51471406, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -135,8 +135,8 @@ Light:
   serializedVersion: 7
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 5.45
-  m_Range: 40
+  m_Intensity: 4.12
+  m_Range: 30
   m_SpotAngle: 82.3
   m_CookieSize: 10
   m_Shadows:
@@ -212,8 +212,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 2}
       propertyPath: waterMode
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e633a20421c47426aa04444234225b69, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 2}
   m_IsPrefabParent: 0
@@ -477,6 +481,26 @@ Prefab:
       propertyPath: m_CullingMask.m_Bits
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 20056701347935184, guid: 7109987ca6346a34996c23e7f084a832,
+        type: 2}
+      propertyPath: m_BackGroundColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 20056701347935184, guid: 7109987ca6346a34996c23e7f084a832,
+        type: 2}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 20056701347935184, guid: 7109987ca6346a34996c23e7f084a832,
+        type: 2}
+      propertyPath: m_BackGroundColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 20056701347935184, guid: 7109987ca6346a34996c23e7f084a832,
+        type: 2}
+      propertyPath: m_ClearFlags
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 108830848385284332, guid: 7109987ca6346a34996c23e7f084a832, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 7109987ca6346a34996c23e7f084a832, type: 2}
@@ -508,8 +532,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 7
   m_Type: 1
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 0.19463666, g: 0.20882952, b: 0.35294116, a: 1}
+  m_Intensity: 0.2
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -530,7 +554,7 @@ Light:
     m_Bits: 4294967295
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
+  m_BounceIntensity: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!4 &899686990
@@ -539,13 +563,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 899686988}
-  m_LocalRotation: {x: -0.70441604, y: 0.06162851, z: -0.70441604, w: -0.06162851}
+  m_LocalRotation: {x: -0.5416752, y: 0.45451948, z: -0.5416752, w: -0.45451948}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 170, y: 270, z: 0}
+  m_LocalEulerAnglesHint: {x: 100, y: 270, z: 0}
 --- !u!123 &899686991
 LensFlare:
   m_ObjectHideFlags: 0
@@ -572,7 +596,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 282948df40eaabb45a300501877f403b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeScale: 360
+  timeScale: 60
 --- !u!4 &914031323 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4623428234896308, guid: 7109987ca6346a34996c23e7f084a832,
