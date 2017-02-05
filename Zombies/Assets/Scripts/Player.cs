@@ -29,4 +29,9 @@ public class Player : MonoBehaviour {
 		gameObject.transform.position = randomSpawn.transform.position;
 		respawn = false;
 	}
+
+    private void FoundClearArea() {
+        Debug.Log("clear area found");
+        GetComponentInChildren<Voice>().PlayFoundArea();
+    }
 }

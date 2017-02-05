@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Radio : MonoBehaviour {
+public class Voice : MonoBehaviour {
 
     public Helicopter helicopter;
     public AudioClip callHeli;
+    public AudioClip foundArea;
 
     private AudioSource audioSource;
 
@@ -23,5 +24,10 @@ public class Radio : MonoBehaviour {
             audioSource.clip = callHeli;
             audioSource.Play();
         }
+    }
+
+    public void PlayFoundArea() {
+        audioSource.clip = foundArea;
+        audioSource.Play();
     }
 }
