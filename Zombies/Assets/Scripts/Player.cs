@@ -5,13 +5,16 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 
 	public Transform spawnPointsParent;
+    public Helicopter helicopter;
 
-	// Toggle "button" to respawn manually.
-	public bool respawn = false;
+    // Toggle "button" to respawn manually.
+    public bool respawn = false;
+
+    private Voice voice;
 
 	// Use this for initialization
 	void Start () {
-		
+        voice = GetComponentInChildren<Voice>();	
 	}
 	
 	// Update is called once per frame
@@ -19,7 +22,14 @@ public class Player : MonoBehaviour {
 		if (respawn == true) {
 			Respawn ();
 		}
-	}
+
+        if (Input.GetButtonDown("CallHeli") && !helicopter.getIsCalled()) {
+            // Order here matters, is called must be set first otherwise future Updates
+            // may still retrieve false;
+            helicopter.CallForRescue();
+            voice.PlayCallHeli();
+        }
+    }
 
 	private void Respawn() {
 		Transform[] spawnPoints = spawnPointsParent.GetComponentsInChildren<Transform> ();
@@ -32,6 +42,6 @@ public class Player : MonoBehaviour {
 
     private void FoundClearArea() {
         Debug.Log("clear area found");
-        GetComponentInChildren<Voice>().PlayFoundArea();
+        voice.PlayFoundArea();
     }
 }
