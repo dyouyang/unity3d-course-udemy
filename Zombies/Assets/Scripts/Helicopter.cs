@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Helicopter : MonoBehaviour {
 
-    private bool isCalled;
+    public GameObject landingZone;
 
+    private bool isCalled;
     private Rigidbody rigidBody;
 
 	// Use this for initialization
@@ -14,9 +15,17 @@ public class Helicopter : MonoBehaviour {
         rigidBody = GetComponent<Rigidbody>();
 	}
 
+    void Update() {
+        if (isCalled) {
+            Vector3 above = new Vector3(landingZone.transform.position.x, transform.position.y, landingZone.transform.position.z);
+            transform.LookAt(above);
+            float step = 50 * Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, above, step);
+        }
+    }
+
     public void CallForRescue() {
         isCalled = true;
-        rigidBody.velocity = new Vector3(0, 0, 50);
     }
 
     public bool getIsCalled() {

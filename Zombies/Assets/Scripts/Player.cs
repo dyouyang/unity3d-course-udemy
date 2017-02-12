@@ -51,6 +51,6 @@ public class Player : MonoBehaviour {
     }
 
     private void DeployFlare() {
-        Instantiate(landingZone, transform.position, Quaternion.identity);
+        helicopter.landingZone = Instantiate(landingZone, transform.position, Quaternion.identity);
     }
 }
