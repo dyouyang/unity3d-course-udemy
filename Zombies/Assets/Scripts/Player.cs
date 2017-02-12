@@ -6,6 +6,7 @@ public class Player : MonoBehaviour {
 
 	public Transform spawnPointsParent;
     public Helicopter helicopter;
+    public GameObject landingZone;
 
     private LandingZoneChecker landingZoneChecker;
 
@@ -30,6 +31,7 @@ public class Player : MonoBehaviour {
             // Order here matters, is called must be set first otherwise future Updates
             // may still retrieve false;
             helicopter.CallForRescue();
+            DeployFlare();
             voice.PlayCallHeli();
         }
     }
@@ -46,5 +48,9 @@ public class Player : MonoBehaviour {
     private void FoundClearArea() {
         Debug.Log("clear area found");
         voice.PlayFoundArea();
+    }
+
+    private void DeployFlare() {
+        Instantiate(landingZone, transform.position, Quaternion.identity);
     }
 }
