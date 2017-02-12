@@ -7,6 +7,8 @@ public class Player : MonoBehaviour {
 	public Transform spawnPointsParent;
     public Helicopter helicopter;
 
+    private LandingZoneChecker landingZoneChecker;
+
     // Toggle "button" to respawn manually.
     public bool respawn = false;
 
@@ -14,7 +16,8 @@ public class Player : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        voice = GetComponentInChildren<Voice>();	
+        voice = GetComponentInChildren<Voice>();
+        landingZoneChecker = GetComponentInChildren<LandingZoneChecker>();
 	}
 	
 	// Update is called once per frame
@@ -23,7 +26,7 @@ public class Player : MonoBehaviour {
 			Respawn ();
 		}
 
-        if (Input.GetButtonDown("CallHeli") && !helicopter.getIsCalled()) {
+        if (Input.GetButtonDown("CallHeli") && !helicopter.getIsCalled() && landingZoneChecker.foundArea) {
             // Order here matters, is called must be set first otherwise future Updates
             // may still retrieve false;
             helicopter.CallForRescue();

@@ -477,6 +477,11 @@ Prefab:
       propertyPath: m_CullingMask.m_Bits
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 114956632422228740, guid: 7109987ca6346a34996c23e7f084a832,
+        type: 2}
+      propertyPath: heliResponse
+      value: 
+      objectReference: {fileID: 8300000, guid: 53f65e57d6bf34c7592571f82475f66f, type: 3}
     m_RemovedComponents:
     - {fileID: 108830848385284332, guid: 7109987ca6346a34996c23e7f084a832, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 7109987ca6346a34996c23e7f084a832, type: 2}

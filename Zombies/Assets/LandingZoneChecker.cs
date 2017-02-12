@@ -6,7 +6,7 @@ public class LandingZoneChecker : MonoBehaviour {
 
     public float timeSinceLandingZoneClear = 0f;
 
-    private bool foundArea = false;
+    public bool foundArea = false;
 
 	// Update is called once per frame
 	void Update () {

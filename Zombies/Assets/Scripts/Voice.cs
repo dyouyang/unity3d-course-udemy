@@ -7,6 +7,7 @@ public class Voice : MonoBehaviour {
     public AudioClip whatHappened;
     public AudioClip callHeli;
     public AudioClip foundArea;
+    public AudioClip heliResponse;
 
     private AudioSource audioSource;
 
@@ -24,6 +25,13 @@ public class Voice : MonoBehaviour {
 
     public void PlayCallHeli() {
         audioSource.clip = callHeli;
+        audioSource.Play();
+
+        Invoke("PlayHeliResponse", callHeli.length + 2);
+    }
+
+    void PlayHeliResponse() {
+        audioSource.clip = heliResponse;
         audioSource.Play();
     }
 }
