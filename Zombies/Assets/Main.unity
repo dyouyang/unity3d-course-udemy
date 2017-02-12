@@ -431,7 +431,7 @@ GameObject:
   - component: {fileID: 822527441}
   - component: {fileID: 822527443}
   - component: {fileID: 822527442}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Check Landing Zone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
