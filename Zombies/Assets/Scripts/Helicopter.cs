@@ -17,10 +17,16 @@ public class Helicopter : MonoBehaviour {
 
     void Update() {
         if (isCalled) {
-            Vector3 above = new Vector3(landingZone.transform.position.x, transform.position.y, landingZone.transform.position.z);
-            transform.LookAt(above);
-            float step = 50 * Time.deltaTime;
-            transform.position = Vector3.MoveTowards(transform.position, above, step);
+            Vector3 aboveLandingZone = new Vector3(landingZone.transform.position.x, transform.position.y, landingZone.transform.position.z);
+            if (!transform.position.Equals(aboveLandingZone)) {
+                // Fly towards spot above the landing zone.
+                float step = 50 * Time.deltaTime;
+                transform.LookAt(aboveLandingZone);
+                transform.position = Vector3.MoveTowards(transform.position, aboveLandingZone, step);
+            } else {
+                // Descend to landing zone.
+                transform.position = Vector3.MoveTowards(transform.position, landingZone.transform.position, 5 * Time.deltaTime);
+            }
         }
     }
 
