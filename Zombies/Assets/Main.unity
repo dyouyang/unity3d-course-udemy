@@ -118,8 +118,9 @@ GameObject:
   m_Component:
   - component: {fileID: 219273297}
   - component: {fileID: 219273298}
+  - component: {fileID: 219273299}
   m_Layer: 0
-  m_Name: Spotlight
+  m_Name: Flashlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -172,6 +173,17 @@ Light:
   m_BounceIntensity: 1.24
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &219273299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 219273296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2d493cbf5a55664fb1629ba39b3725b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &243034393
 Prefab:
   m_ObjectHideFlags: 0
@@ -1288,7 +1300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sun: {fileID: 899686989}
-  secondsInFullDay: 240
+  secondsInFullDay: 1440
   currentTimeOfDay: 0.7
   timeMultiplier: 1
 --- !u!1001 &1993425696
