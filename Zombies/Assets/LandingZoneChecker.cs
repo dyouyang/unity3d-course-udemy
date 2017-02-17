@@ -4,21 +4,13 @@ using UnityEngine;
 
 public class LandingZoneChecker : MonoBehaviour {
 
-    public float timeSinceLandingZoneClear = 0f;
-
     public bool foundArea = false;
 
-	// Update is called once per frame
-	void Update () {
-        timeSinceLandingZoneClear += Time.deltaTime;
-
-        if (timeSinceLandingZoneClear > 1f && !foundArea) {
+    void OnTriggerEnter(Collider collider) {
+        Debug.Log("LandingZoneChecker onTriggerEnter " + collider.tag);
+        if (collider.tag.Equals("LandingZone")) {
             foundArea = true;
             SendMessageUpwards("FoundClearArea");
         }
-	}
-
-    void OnTriggerStay () {
-        timeSinceLandingZoneClear = 0f;
     }
 }
