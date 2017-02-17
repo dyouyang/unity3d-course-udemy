@@ -13,17 +13,17 @@ public class Player : MonoBehaviour {
     public GameStateManager gameStateManager;
 
     private int currentHp;
-    private LandingZoneChecker landingZoneChecker;
 
     // Toggle "button" to respawn manually.
     public bool respawn = false;
+    
+    public bool foundArea = false;
 
     private Voice voice;
 
 	// Use this for initialization
 	void Start () {
         voice = GetComponentInChildren<Voice>();
-        landingZoneChecker = GetComponentInChildren<LandingZoneChecker>();
         currentHp = maxHp;
 	}
 	
@@ -33,7 +33,7 @@ public class Player : MonoBehaviour {
 			Respawn ();
 		}
 
-        if (Input.GetButtonDown("CallHeli") && !helicopter.getIsCalled() && landingZoneChecker.foundArea) {
+        if (Input.GetButtonDown("CallHeli") && !helicopter.getIsCalled() && foundArea) {
             // Order here matters, is called must be set first otherwise future Updates
             // may still retrieve false;
             helicopter.CallForRescue();
@@ -68,4 +68,14 @@ public class Player : MonoBehaviour {
             gameStateManager.Lose();
         }
     }
+
+    void OnTriggerEnter(Collider collider) {
+        Debug.Log("LandingZoneChecker onTriggerEnter " + collider.tag);
+        if (collider.tag.Equals("LandingZone")) {
+            foundArea = true;
+            FoundClearArea();
+        } else if (collider.GetComponent<Helicopter>() != null) {
+                gameStateManager.Win();
+            }
+        }
 }
