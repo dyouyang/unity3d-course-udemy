@@ -72,8 +72,10 @@ public class Player : MonoBehaviour {
     void OnTriggerEnter(Collider collider) {
         Debug.Log("LandingZoneChecker onTriggerEnter " + collider.tag);
         if (collider.tag.Equals("LandingZone")) {
-            foundArea = true;
-            FoundClearArea();
+            if (!foundArea) {
+                FoundClearArea();
+                foundArea = true;
+            }
         } else if (collider.GetComponent<Helicopter>() != null) {
                 gameStateManager.Win();
             }
