@@ -10,6 +10,7 @@ public class Player : MonoBehaviour {
     public GameObject landingZone;
     public int maxHp;
     public Slider healthBar;
+    public GameStateManager gameStateManager;
 
     private int currentHp;
     private LandingZoneChecker landingZoneChecker;
@@ -63,5 +64,8 @@ public class Player : MonoBehaviour {
         Debug.Log("taking damage: " + damage);
         currentHp -= damage;
         healthBar.value = (float)currentHp / maxHp;
+        if (currentHp <= 0) {
+            gameStateManager.Lose();
+        }
     }
 }
