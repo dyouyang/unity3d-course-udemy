@@ -175,6 +175,118 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!1001 &3048673
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 131.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 53.287
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 604.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0.99670565
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.081104025
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_RootOrder
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114177810911074314, guid: 22213170c25b21344b29b133ba9748c7,
+        type: 2}
+      propertyPath: playerGameObject
+      value: 
+      objectReference: {fileID: 1746555734}
+    - target: {fileID: 114797992535419834, guid: 22213170c25b21344b29b133ba9748c7,
+        type: 2}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 216874714}
+    - target: {fileID: 1646063234366086, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_Name
+      value: RealZombie (8)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &60707837
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 489
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 53.287
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 164.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0.99670565
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.081104025
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_RootOrder
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 114177810911074314, guid: 22213170c25b21344b29b133ba9748c7,
+        type: 2}
+      propertyPath: playerGameObject
+      value: 
+      objectReference: {fileID: 1746555734}
+    - target: {fileID: 114797992535419834, guid: 22213170c25b21344b29b133ba9748c7,
+        type: 2}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 216874714}
+    - target: {fileID: 1646063234366086, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_Name
+      value: RealZombie (10)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &214114701
 GameObject:
   m_ObjectHideFlags: 0
@@ -495,6 +607,62 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 317194363}
+--- !u!1001 &364338466
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 403.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 53.287
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 435.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0.99670565
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.081104025
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_RootOrder
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 114177810911074314, guid: 22213170c25b21344b29b133ba9748c7,
+        type: 2}
+      propertyPath: playerGameObject
+      value: 
+      objectReference: {fileID: 1746555734}
+    - target: {fileID: 114797992535419834, guid: 22213170c25b21344b29b133ba9748c7,
+        type: 2}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 216874714}
+    - target: {fileID: 1646063234366086, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_Name
+      value: RealZombie (9)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &374994653
 GameObject:
   m_ObjectHideFlags: 0
@@ -523,6 +691,62 @@ Transform:
   m_Father: {fileID: 1605113537}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &409829852
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 53.287
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 510.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0.99670565
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.081104025
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 114177810911074314, guid: 22213170c25b21344b29b133ba9748c7,
+        type: 2}
+      propertyPath: playerGameObject
+      value: 
+      objectReference: {fileID: 1746555734}
+    - target: {fileID: 114797992535419834, guid: 22213170c25b21344b29b133ba9748c7,
+        type: 2}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 216874714}
+    - target: {fileID: 1646063234366086, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_Name
+      value: RealZombie (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &420943619
 GameObject:
   m_ObjectHideFlags: 0
@@ -614,6 +838,62 @@ Light:
   m_BounceIntensity: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1001 &444563338
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 586.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 58.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 232.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0.99670565
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.081104025
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_RootOrder
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 114177810911074314, guid: 22213170c25b21344b29b133ba9748c7,
+        type: 2}
+      propertyPath: playerGameObject
+      value: 
+      objectReference: {fileID: 1746555734}
+    - target: {fileID: 114797992535419834, guid: 22213170c25b21344b29b133ba9748c7,
+        type: 2}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 216874714}
+    - target: {fileID: 1646063234366086, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_Name
+      value: RealZombie (5)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &476497898
 GameObject:
   m_ObjectHideFlags: 0
@@ -719,6 +999,62 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &560906021
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 431.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 55.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 267.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0.99670565
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.081104025
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_RootOrder
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 114177810911074314, guid: 22213170c25b21344b29b133ba9748c7,
+        type: 2}
+      propertyPath: playerGameObject
+      value: 
+      objectReference: {fileID: 1746555734}
+    - target: {fileID: 114797992535419834, guid: 22213170c25b21344b29b133ba9748c7,
+        type: 2}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 216874714}
+    - target: {fileID: 1646063234366086, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_Name
+      value: RealZombie (6)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &577709657
 GameObject:
   m_ObjectHideFlags: 0
@@ -912,6 +1248,62 @@ Transform:
   m_Father: {fileID: 1605113537}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &700793545
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 77
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 55.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 176
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0.99670565
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.081104025
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_RootOrder
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 114177810911074314, guid: 22213170c25b21344b29b133ba9748c7,
+        type: 2}
+      propertyPath: playerGameObject
+      value: 
+      objectReference: {fileID: 1746555734}
+    - target: {fileID: 114797992535419834, guid: 22213170c25b21344b29b133ba9748c7,
+        type: 2}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 216874714}
+    - target: {fileID: 1646063234366086, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_Name
+      value: RealZombie (7)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &720337465
 GameObject:
   m_ObjectHideFlags: 0
@@ -993,6 +1385,118 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &768354131
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 321.517
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 55.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 371.879
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0.99670565
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.081104025
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_RootOrder
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114177810911074314, guid: 22213170c25b21344b29b133ba9748c7,
+        type: 2}
+      propertyPath: playerGameObject
+      value: 
+      objectReference: {fileID: 1746555734}
+    - target: {fileID: 114797992535419834, guid: 22213170c25b21344b29b133ba9748c7,
+        type: 2}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 216874714}
+    - target: {fileID: 1646063234366086, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_Name
+      value: RealZombie (3)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &773651283
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 429.81
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 53.287
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 168.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0.99670565
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.081104025
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_RootOrder
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 114177810911074314, guid: 22213170c25b21344b29b133ba9748c7,
+        type: 2}
+      propertyPath: playerGameObject
+      value: 
+      objectReference: {fileID: 1746555734}
+    - target: {fileID: 114797992535419834, guid: 22213170c25b21344b29b133ba9748c7,
+        type: 2}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 216874714}
+    - target: {fileID: 1646063234366086, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_Name
+      value: RealZombie (4)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &899686988
 GameObject:
   m_ObjectHideFlags: 0
@@ -2636,6 +3140,62 @@ Prefab:
       propertyPath: target
       value: 
       objectReference: {fileID: 216874714}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &2031034968
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 173.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 53.287
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 682.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0.99670565
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.081104025
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152348884627262, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_RootOrder
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 114177810911074314, guid: 22213170c25b21344b29b133ba9748c7,
+        type: 2}
+      propertyPath: playerGameObject
+      value: 
+      objectReference: {fileID: 1746555734}
+    - target: {fileID: 114797992535419834, guid: 22213170c25b21344b29b133ba9748c7,
+        type: 2}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 216874714}
+    - target: {fileID: 1646063234366086, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
+      propertyPath: m_Name
+      value: RealZombie (2)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
   m_IsPrefabParent: 0
