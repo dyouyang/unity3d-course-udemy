@@ -117,11 +117,14 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
 		void UpdateAnimator(Vector3 move)
 		{
+            // Handled with colliders now in Zombie.cs
+            /*
             if (m_ForwardAmount > 0.9f) {
                 m_Animator.SetBool("isWalking", true);
             } else {
                 m_Animator.SetBool("isWalking", false);
             }
+            */
 		}
 
 
