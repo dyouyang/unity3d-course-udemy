@@ -7,6 +7,7 @@ public class Player : MonoBehaviour {
 	public Transform spawnPointsParent;
     public Helicopter helicopter;
     public GameObject landingZone;
+    public int maxHp;
 
     private LandingZoneChecker landingZoneChecker;
 
@@ -52,5 +53,10 @@ public class Player : MonoBehaviour {
 
     private void DeployFlare() {
         helicopter.landingZone = Instantiate(landingZone, transform.position, Quaternion.identity);
+    }
+
+    public void takeDamage(int damage) {
+        Debug.Log("taking damage: " + damage);
+        maxHp -= damage;
     }
 }
