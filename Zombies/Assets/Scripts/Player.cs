@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
 
@@ -8,7 +9,9 @@ public class Player : MonoBehaviour {
     public Helicopter helicopter;
     public GameObject landingZone;
     public int maxHp;
+    public Slider healthBar;
 
+    private int currentHp;
     private LandingZoneChecker landingZoneChecker;
 
     // Toggle "button" to respawn manually.
@@ -20,6 +23,7 @@ public class Player : MonoBehaviour {
 	void Start () {
         voice = GetComponentInChildren<Voice>();
         landingZoneChecker = GetComponentInChildren<LandingZoneChecker>();
+        currentHp = maxHp;
 	}
 	
 	// Update is called once per frame
@@ -57,6 +61,7 @@ public class Player : MonoBehaviour {
 
     public void takeDamage(int damage) {
         Debug.Log("taking damage: " + damage);
-        maxHp -= damage;
+        currentHp -= damage;
+        healthBar.value = (float)currentHp / maxHp;
     }
 }
