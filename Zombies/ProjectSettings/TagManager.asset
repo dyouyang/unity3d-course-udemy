@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - LandingZone
+  - Zombie
   layers:
   - Default
   - TransparentFX
