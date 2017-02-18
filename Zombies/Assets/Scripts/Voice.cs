@@ -9,6 +9,9 @@ public class Voice : MonoBehaviour {
     public AudioClip foundArea;
     public AudioClip heliResponse;
 
+    public AudioSource musicManager;
+    public AudioClip actionMusic;
+
     private AudioSource audioSource;
 
 	// Use this for initialization
@@ -33,5 +36,12 @@ public class Voice : MonoBehaviour {
     void PlayHeliResponse() {
         audioSource.clip = heliResponse;
         audioSource.Play();
+        Invoke("PlayActionMusic", heliResponse.length + 5);
+    }
+
+    void PlayActionMusic() {
+        musicManager.Stop();
+        musicManager.clip = actionMusic;
+        musicManager.Play();
     }
 }
