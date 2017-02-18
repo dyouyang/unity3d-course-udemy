@@ -39,6 +39,7 @@ public class Player : MonoBehaviour {
             helicopter.CallForRescue();
             DeployFlare();
             voice.PlayCallHeli();
+            GetComponent<ZombieSpawner>().spawnInterval = 4f;
         }
     }
 

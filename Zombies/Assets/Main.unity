@@ -2568,6 +2568,7 @@ GameObject:
   - component: {fileID: 1746555736}
   - component: {fileID: 1746555735}
   - component: {fileID: 1746555740}
+  - component: {fileID: 1746555741}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2706,8 +2707,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsWalking: 0
-  m_WalkSpeed: 5
-  m_RunSpeed: 10
+  m_WalkSpeed: 2
+  m_RunSpeed: 5
   m_RunstepLenghten: 0.7
   m_JumpSpeed: 10
   m_StickToGroundForce: 10
@@ -2826,6 +2827,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1746555741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1746555734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48b487aed9fb1b9469a2ac0a3a90fb62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnInterval: 10
+  toSpawn: {fileID: 1646063234366086, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
 --- !u!1 &1874949519
 GameObject:
   m_ObjectHideFlags: 0
@@ -3140,6 +3154,21 @@ Prefab:
       propertyPath: target
       value: 
       objectReference: {fileID: 216874714}
+    - target: {fileID: 114144695932064882, guid: 22213170c25b21344b29b133ba9748c7,
+        type: 2}
+      propertyPath: m_MoveSpeedMultiplier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114144695932064882, guid: 22213170c25b21344b29b133ba9748c7,
+        type: 2}
+      propertyPath: m_AnimSpeedMultiplier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 195040531328482480, guid: 22213170c25b21344b29b133ba9748c7,
+        type: 2}
+      propertyPath: m_Speed
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 22213170c25b21344b29b133ba9748c7, type: 2}
   m_IsPrefabParent: 0
