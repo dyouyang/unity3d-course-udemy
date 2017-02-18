@@ -15,6 +15,7 @@ public class Player : MonoBehaviour {
     public int maxStamina;
     public Slider staminaBar;
     public GameStateManager gameStateManager;
+    public Image damageImage;
 
     private int currentHp;
     private int currentStamina;
@@ -92,6 +93,8 @@ public class Player : MonoBehaviour {
         if (currentHp <= 0) {
             gameStateManager.Lose();
         }
+        damageImage.color = new Color(1f, 1f, 1f, 1f);
+        damageImage.GetComponent<Fade>().FadeOut();
     }
 
     void OnTriggerEnter(Collider collider) {
