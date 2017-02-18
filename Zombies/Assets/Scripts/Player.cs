@@ -56,9 +56,8 @@ public class Player : MonoBehaviour {
 
     void FixedUpdate() {
         HandleStamina();
-
-
     }
+
     private void HandleStamina() {
 
         if (GetComponent<FirstPersonController>().m_IsWalking) {
