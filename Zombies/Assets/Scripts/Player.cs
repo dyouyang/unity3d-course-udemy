@@ -79,7 +79,6 @@ public class Player : MonoBehaviour {
 	}
 
     private void FoundClearArea() {
-        Debug.Log("clear area found");
         voice.PlayFoundArea();
     }
 
@@ -88,7 +87,6 @@ public class Player : MonoBehaviour {
     }
 
     public void takeDamage(int damage) {
-        Debug.Log("taking damage: " + damage);
         currentHp -= damage;
         healthBar.value = (float)currentHp / maxHp;
         if (currentHp <= 0) {
@@ -97,7 +95,6 @@ public class Player : MonoBehaviour {
     }
 
     void OnTriggerEnter(Collider collider) {
-        Debug.Log("LandingZoneChecker onTriggerEnter " + collider.tag);
         if (collider.tag.Equals("LandingZone")) {
             if (!foundArea) {
                 FoundClearArea();

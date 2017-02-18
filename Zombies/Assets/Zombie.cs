@@ -16,20 +16,17 @@ public class Zombie : MonoBehaviour {
 
     void OnCollisionStay(Collision collision) {
         if (collision.collider.tag.Equals("Player")) {
-            Debug.Log("Hit Player");
             m_Animator.SetBool("isWalking", false);
         }
     }
 
     void OnCollisionExit(Collision collision) {
         if (collision.collider.tag.Equals("Player")) {
-            Debug.Log("Left Player");
             m_Animator.SetBool("isWalking", true);
         }
     }
 
     public void Attack(int damage) {
-        Debug.Log("Attacking: " + damage);
         Player player = playerGameObject.GetComponent<Player>();
         player.takeDamage(damage);
     }
