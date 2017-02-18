@@ -9,14 +9,21 @@ public class ReplaySystem : MonoBehaviour {
     private ReplayKeyFrame[] replayKeyFrames = new ReplayKeyFrame[REPLAY_BUFFER_SIZE_IN_FRAMES];
 
     private Rigidbody rigidBody;
+    private GameManager gameManager;
+
 	// Use this for initialization
 	void Start () {
         rigidBody = GetComponent<Rigidbody>();
+        gameManager = FindObjectOfType<GameManager>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        RecordReplayKeyFrames();	
+        if (gameManager.recording) {
+            RecordReplayKeyFrames();
+        } else {
+            PlaybackReplay();
+        }
 	}
 
     private void RecordReplayKeyFrames() {
