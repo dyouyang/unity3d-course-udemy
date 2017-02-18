@@ -8,9 +8,10 @@ public class ReplaySystem : MonoBehaviour {
     private const int REPLAY_BUFFER_SIZE_IN_FRAMES = 100;
     private ReplayKeyFrame[] replayKeyFrames = new ReplayKeyFrame[REPLAY_BUFFER_SIZE_IN_FRAMES];
 
+    private Rigidbody rigidBody;
 	// Use this for initialization
 	void Start () {
-		
+        rigidBody = GetComponent<Rigidbody>();
 	}
 	
 	// Update is called once per frame
@@ -19,8 +20,16 @@ public class ReplaySystem : MonoBehaviour {
 	}
 
     private void RecordReplayKeyFrames() {
+        rigidBody.isKinematic = false;
         int currentBufferIndex = Time.frameCount % REPLAY_BUFFER_SIZE_IN_FRAMES;
         replayKeyFrames[currentBufferIndex] = new ReplayKeyFrame(Time.time, transform.position, transform.rotation);
+    }
+
+    private void PlaybackReplay() {
+        rigidBody.isKinematic = true;
+        int currentBufferIndex = Time.frameCount % REPLAY_BUFFER_SIZE_IN_FRAMES;
+        transform.position = replayKeyFrames[currentBufferIndex].Pos;
+        transform.rotation = replayKeyFrames[currentBufferIndex].Rot;
     }
 }
 
@@ -37,5 +46,25 @@ public struct ReplayKeyFrame {
         frameTime = time;
         this.pos = pos;
         this.rot = rot;
+    }
+
+    public Vector3 Pos {
+        get {
+            return pos;
+        }
+
+        set {
+            pos = value;
+        }
+    }
+
+    public Quaternion Rot {
+        get {
+            return rot;
+        }
+
+        set {
+            rot = value;
+        }
     }
 }
