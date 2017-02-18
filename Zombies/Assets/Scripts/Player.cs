@@ -16,6 +16,7 @@ public class Player : MonoBehaviour {
     public Slider staminaBar;
     public GameStateManager gameStateManager;
     public Image damageImage;
+    public AudioClip grunt;
 
     private int currentHp;
     private int currentStamina;
@@ -27,11 +28,14 @@ public class Player : MonoBehaviour {
 
     private Voice voice;
 
+    private AudioSource playerAudio;
+
 	// Use this for initialization
 	void Start () {
         voice = GetComponentInChildren<Voice>();
         currentHp = maxHp;
         currentStamina = maxStamina;
+        playerAudio = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -95,6 +99,8 @@ public class Player : MonoBehaviour {
         }
         damageImage.color = new Color(1f, 1f, 1f, 1f);
         damageImage.GetComponent<Fade>().FadeOut();
+        playerAudio.clip = grunt;
+        playerAudio.Play();
     }
 
     void OnTriggerEnter(Collider collider) {

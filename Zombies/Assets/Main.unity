@@ -2894,6 +2894,7 @@ MonoBehaviour:
   staminaBar: {fileID: 37229132}
   gameStateManager: {fileID: 1720602558}
   damageImage: {fileID: 2076474439}
+  grunt: {fileID: 8300000, guid: 38873641bcfc1fa498aaa64f3355dd18, type: 3}
   respawn: 0
   foundArea: 0
 --- !u!82 &1746555736
