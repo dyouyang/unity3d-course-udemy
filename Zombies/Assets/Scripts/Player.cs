@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class Player : MonoBehaviour {
 
@@ -10,9 +12,12 @@ public class Player : MonoBehaviour {
     public GameObject landingZone;
     public int maxHp;
     public Slider healthBar;
+    public int maxStamina;
+    public Slider staminaBar;
     public GameStateManager gameStateManager;
 
     private int currentHp;
+    private int currentStamina;
 
     // Toggle "button" to respawn manually.
     public bool respawn = false;
@@ -25,6 +30,7 @@ public class Player : MonoBehaviour {
 	void Start () {
         voice = GetComponentInChildren<Voice>();
         currentHp = maxHp;
+        currentStamina = maxStamina;
 	}
 	
 	// Update is called once per frame
@@ -41,13 +47,33 @@ public class Player : MonoBehaviour {
             voice.PlayCallHeli();
             GetComponent<ZombieSpawner>().spawnInterval = 4f;
         }
+        HandleStamina();
     }
 
-	private void Respawn() {
+    private void HandleStamina() {
+
+        if (GetComponent<FirstPersonController>().m_IsWalking) {
+            currentStamina += 1;
+        } else {
+            currentStamina -= 1;
+        }
+
+        currentStamina = Mathf.Clamp(currentStamina, 0, maxStamina);
+        float ratio = (float)currentStamina / maxStamina;
+        staminaBar.value = ratio;
+
+        if (ratio < 0.1f) {
+            GetComponent<FirstPersonController>().outOfStamina = true;
+        } else {
+            GetComponent<FirstPersonController>().outOfStamina = false;
+        }
+    }
+
+    private void Respawn() {
 		Transform[] spawnPoints = spawnPointsParent.GetComponentsInChildren<Transform> ();
 
 		// Index 0 is the parent's transform, start at index 1.
-		Transform randomSpawn = spawnPoints [Random.Range (1, spawnPoints.Length)];
+		Transform randomSpawn = spawnPoints [UnityEngine.Random.Range (1, spawnPoints.Length)];
 		gameObject.transform.position = randomSpawn.transform.position;
 		respawn = false;
 	}
