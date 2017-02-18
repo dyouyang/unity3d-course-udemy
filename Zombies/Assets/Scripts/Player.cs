@@ -52,13 +52,17 @@ public class Player : MonoBehaviour {
             voice.PlayCallHeli();
             GetComponent<ZombieSpawner>().spawnInterval = 4f;
         }
-        HandleStamina();
     }
 
+    void FixedUpdate() {
+        HandleStamina();
+
+
+    }
     private void HandleStamina() {
 
         if (GetComponent<FirstPersonController>().m_IsWalking) {
-            currentStamina += 1;
+            currentStamina += 2;
         } else {
             currentStamina -= 1;
         }
