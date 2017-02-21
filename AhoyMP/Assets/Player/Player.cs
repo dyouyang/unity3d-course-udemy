@@ -29,5 +29,6 @@ public class Player : NetworkBehaviour {
     public override void OnStartLocalPlayer() {
         base.OnStartLocalPlayer();
         GetComponentInChildren<Camera>().enabled = true;
+        GetComponentInChildren<AudioListener>().enabled = true;
     }
 }
